@@ -93,12 +93,15 @@ After successful upload, the package becomes publicly available on PyPI.
 
 Step 6: Verify Installation
 Once uploaded, test the package:
+```
+pip install <your-package-name>
+```
 
 Run it from the command line to confirm it works correctly.
 
 This project demonstrates the complete lifecycle of a Python package:
 development → packaging → publishing → usage
-pip install <your-package-name>
+
 
 
 🎯 Learning Objective
