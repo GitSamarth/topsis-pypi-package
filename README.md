@@ -1,11 +1,11 @@
-# topsis-pypi-package
+# Topsis-pypi-package
 ---
 
 ## 📚 Learn How to Build Your First PyPI Package
 
 This project is also intended as a **reference implementation** for students and beginners who want to learn how to create and publish their first Python package on PyPI.
 
-### Step 1: Use the Package
+### Use the Package
 First, install and use this package from PyPI to understand how a real-world Python package works:
 
 ```bash
@@ -20,9 +20,30 @@ Command-line interface
 Argument handling
 Output generation
 
-Step 2: Explore the Repository Structure
-This repository demonstrates a standard PyPI-compatible structure:
+---
 
+## 🔐 Publishing to PyPI (Step-by-Step Guide)
+
+This section explains the basic steps required to create and publish
+your first Python package on **PyPI**, using this project as a reference.
+
+---
+
+### Step 1: Create a PyPI Account
+
+1. Go to https://pypi.org/
+2. Sign up for a new account
+3. Verify your email address
+4. Enable two-factor authentication (recommended)
+
+---
+
+### Step 2: Prepare the Project Structure
+
+A Python package must follow a standard folder structure.
+This project uses the following PyPI-compatible layout:
+
+```text
 topsis-cli-pypi/
 ├── topsis_samarth/
 │   ├── __init__.py
@@ -31,6 +52,7 @@ topsis-cli-pypi/
 ├── README.md
 ├── LICENSE
 └── requirements.txt
+```
 
 
 setup.py: package metadata and entry points
@@ -48,17 +70,36 @@ Build the package:
 ```bash
 python setup.py sdist bdist_wheel
 ```
-Upload to PyPI using twine
+Step 3: Install Packaging Tools
+
+Before building the package, install required tools:
+```
+pip install setuptools wheel twine
+```
+Step 4: Build the Package
+From the project root directory, run:
+python setup.py sdist bdist_wheel
+This command generates a dist/ folder containing the package files.
+
+Step 5: Upload to PyPI
+Upload the package using twine:
+```
+twine upload dist/*
+```
+You will be prompted to enter:
+PyPI username
+PyPI password (or API token)
+After successful upload, the package becomes publicly available on PyPI.
+
+Step 6: Verify Installation
+Once uploaded, test the package:
+
+Run it from the command line to confirm it works correctly.
 
 This project demonstrates the complete lifecycle of a Python package:
 development → packaging → publishing → usage
+pip install <your-package-name>
 
-Step 4: Extend Further
-After building a basic package, you can:
-Add validation and error handling
-Improve CLI usability
-Add tests
-Publish new versions on PyPI
 
 🎯 Learning Objective
 The goal of this project is not only to provide a working TOPSIS implementation,
