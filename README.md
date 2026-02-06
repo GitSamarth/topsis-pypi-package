@@ -30,7 +30,8 @@ topsis-cli-pypi/
 ├── setup.py
 ├── README.md
 ├── LICENSE
-├── requirements.txt
+└── requirements.txt
+
 
 setup.py: package metadata and entry points
 Package folder (topsis_samarth/): core logic
